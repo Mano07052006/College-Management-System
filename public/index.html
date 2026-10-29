@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICAM-SIS</title>
+<style>
+  *{box-sizing:border-box} body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f4f6fb;color:#1c2333}
+  header{background:#1f3a8a;color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  nav{display:flex;gap:6px;flex-wrap:wrap;padding:10px 16px;background:#fff;border-bottom:1px solid #dde3f0}
+  button{background:#2f5bea;color:#fff;border:0;padding:8px 14px;border-radius:6px;cursor:pointer;font-size:14px}
+  button.sec{background:#e6ebfa;color:#1f3a8a} button.danger{background:#c62828}
+  main{padding:16px;max-width:960px;margin:auto} .card{background:#fff;border-radius:10px;padding:16px;margin-bottom:16px;box-shadow:0 1px 3px #0001}
+  label{display:flex;flex-direction:column;font-size:13px;gap:3px;margin:6px 0} input,select,textarea{padding:8px;border:1px solid #c5cde0;border-radius:6px;font-size:14px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end} table{width:100%;border-collapse:collapse;font-size:14px;display:block;overflow-x:auto}
+  th,td{padding:8px;border-bottom:1px solid #e5e9f3;text-align:left} .bad{color:#c62828;font-weight:600} .ok{color:#2e7d32}
+  #msg{padding:10px 16px;margin:0} .err{color:#c62828} .unread{background:#eef3ff} #login{max-width:340px;margin:60px auto}
+</style>
+</head>
+<body>
+<section id="login" class="card">
+  <h2>ICAM-SIS Login</h2>
+  <form id="loginForm">
+    <label>Username<input name="username" required autocomplete="username"></label>
+    <label>Password<input name="password" type="password" required autocomplete="current-password"></label>
+    <button>Sign in</button>
+  </form>
+  <p id="loginErr" class="err"></p>
+</section>
+<div id="app" hidden>
+  <header><b>ICAM-SIS</b><span><span id="who"></span> &nbsp; <button class="sec" id="bell"></button> <button class="sec" id="logout">Logout</button></span></header>
+  <nav id="nav"></nav>
+  <p id="msg"></p>
+  <main id="view"></main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
